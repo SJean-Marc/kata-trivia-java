@@ -3,9 +3,8 @@ package trivia;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-
-// TODO refactor me
-public class Game implements IGame {
+// REFACTOR ME
+public class GameBetter implements IGame {
    ArrayList players = new ArrayList();
    int[] places = new int[6];
    int[] purses = new int[6];
@@ -19,7 +18,7 @@ public class Game implements IGame {
    int currentPlayer = 0;
    boolean isGettingOutOfPenaltyBox;
 
-   public Game() {
+   public GameBetter() {
       for (int i = 0; i < 50; i++) {
          popQuestions.addLast("Pop Question " + i);
          scienceQuestions.addLast(("Science Question " + i));
@@ -36,9 +35,7 @@ public class Game implements IGame {
       return (howManyPlayers() >= 2);
    }
 
-   public boolean add(String playerName) {
-
-
+   public void add(String playerName) {
       players.add(playerName);
       places[howManyPlayers()] = 0;
       purses[howManyPlayers()] = 0;
@@ -46,7 +43,6 @@ public class Game implements IGame {
 
       System.out.println(playerName + " was added");
       System.out.println("They are player number " + players.size());
-      return true;
    }
 
    public int howManyPlayers() {
